@@ -1,0 +1,65 @@
+ <div *ngIf="sentParams.id == 1">
+
+	<h3>Max</h3>
+</div> 
+
+ <div *ngIf="sentParams.id == 2">
+
+	<h3>Siblings - Full and Half</h3>
+</div>
+
+<div *ngIf="sentParams.id == 3">
+
+	<h3>Cousins -  Full and Extended</h3>
+</div>
+<div *ngIf="sentParams.id == 4">
+
+	<h3>??? Third Cousins ???</h3>
+</div>
+
+
+
+
+<div class="container">
+<div class="row">
+
+    <div  *ngFor = 'let x of picData' class="d-flex flex-row align-items-start">
+      	<div *ngIf='x.level==sentParams.id'>
+		 <div class="d-flex flex-row align-items-start">
+
+
+
+
+	        <div class ='card card-inverse mb-4 mr-4' style="width:200px;height:220px;background-color: #333; border-color: #333;" >
+	        	<div class="card-body" >
+	            	<a style ="color:white" routerLink="/person/{{x._id}}">
+	            		<p>{{x.name}}</p>
+	            		<img src = '{{x.url}}' width='100%' ></a> 
+	            </div>
+	            <div class="align-text-top" ><a style="color:white;" routerLink="/person/{{x._id}}">click for more info</a></div>
+	        </div>
+</div>
+</div>
+	      </div>
+	     </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!--     <div  style = 'width:100%;margin:10px;' *ngFor = 'let x of picData'>
+      	<div *ngIf='x.level==sentParams.id'>
+
+	        <div style = 'float:left;width:150px;margin:10px;'>
+	            <a routerLink="/person/{{x._id}}"><p>{{x.name}}</p><img style='max-height:150px;'src = '{{x.url}}' width = '100%' ></a> 
+	         </div>
+	     </div>
+    </div> -->
+
+
+
